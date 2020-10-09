@@ -14,6 +14,8 @@ app.get('/', (req, res) => {
 
 app.get('/Cities', (req, res) => { city.handleCities(req, res, fs) });
 app.post('/Cities', (req, res) => { city.handleAddCity(req, res, fs) });
+app.put('/Cities', (req, res) => { city.handleUpdateCity(req, res, fs) });
+
 
 app.get('/Weather/city/:city/state/:state', (req, res) => { weather.handleWeather(req, res)});
 
@@ -23,6 +25,6 @@ app.get('/Weather/city/:city/state/:state', (req, res) => { weather.handleWeathe
 
 app.listen(process.env.PORT || 3000, ()=> {
     console.log(`app is running on port ${process.env.PORT}`);
-  })
+  });
   
 
